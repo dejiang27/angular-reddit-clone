@@ -1,4 +1,6 @@
-<p>article works!</p>
+
+
+<!--
 <div class="four wide column center aligned votes">
     <div class="ui statistic">
         <div class="value">
@@ -31,3 +33,17 @@
       </li>
     </ul>
 </div>
+-->
+
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">{{ article.title }}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">{{ article.votes }}  Points</h6>
+      <div class="card-text" >
+        <a href="{{ article.link }}">({{ article.domain() }})</a>
+      </div>
+
+      <a class="btn btn-danger" (click)="voteUp()">upvote</a>
+      <a class="btn btn-success" (click)="voteDown()">downvote</a>
+    </div>
+  </div>

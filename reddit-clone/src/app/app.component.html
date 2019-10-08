@@ -6,29 +6,25 @@
 <!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
 <!-- * * * * * * * to get started with your project! * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<form class="ui large form segment">
-  <h3 class="ui header">
-    Add a Link
-  </h3>
-  <div class="field">
-    <label for="title">
-      Title:
-    </label>
-    <input id="title" #newtitle>
-  </div>
-  <div class="field">
-    <label for="like">
-      Link:
-    </label>
-    <input id="link" #newlink>
-  </div>
+
+
+
+  <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-default">Title</span>
+      </div>
+      <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="title" #newtitle>
+    </div>
+
+  <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon3">https://example.com/</span>
+      </div>
+      <input type="text" class="form-control" aria-describedby="basic-addon3" id="link" #newlink>
+    </div>
 
   <!--Add the submit button-->
-  <button (click)="submitArticle(newtitle, newlink)" class="ti positive right floated button">
-    Submit
-  </button>
-
-</form>
+  <button type="button" (click)="submitArticle(newtitle, newlink)" class="btn btn-primary">Submit</button>
 
 <div class="ui grid posts">
   <app-article *ngFor="let article of sortedArticles()" [article]="article"></app-article>
