@@ -7,25 +7,38 @@
 <!-- * * * * * * * to get started with your project! * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
-
+<!--
+<h2 style="text-align: center">{{apptitle}}</h2>
+-->
 <h2>{{apptitle}}</h2>
+
 <form>
-  <div class="input-group mb-3" style="width:60%">
+  <!--Add the title field-->
+  <div class="input-group mb-3" style="width:400px">
       <div class="input-group-prepend">
         <span class="input-group-text" id="inputGroup-sizing-default">Title</span>
       </div>
       <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="title" #newtitle>
     </div>
 
-  <div class="input-group mb-3" style="width:70%">
+  <!--Add the Link field-->
+  <div class="input-group mb-3" style="width:400px">
       <div class="input-group-prepend">
-        <span class="input-group-text" id="basic-addon3">https://example.com/</span>
+        <span class="input-group-text" id="basic-addon3">Link</span>
       </div>
-      <input type="text" class="form-control" aria-describedby="basic-addon3" id="link" #newlink>
+      <input type="text" class="form-control" placeholder="https://example.com/" aria-describedby="basic-addon3" id="link" #newlink>
+    </div>
+
+  <!--Add the role field-->
+    <div class="input-group mb-3" style="width:400px">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-default">Role</span>
+      </div>
+      <input type="text" class="form-control" placeholder="user or administrator" aria-describedby="basic-addon3" id="role" #newrole>
     </div>
 
   <!--Add the submit button-->
-  <button type="button" (click)="submitArticle(newtitle, newlink)" class="btn btn-primary">Submit</button>
+  <button type="button" (click)="submitArticle(newtitle, newlink, newrole)" class="btn btn-primary">Submit</button>
 
   <!--Add the articles -->
 <div class="ui grid posts">

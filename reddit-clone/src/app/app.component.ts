@@ -10,14 +10,17 @@ export class AppComponent {
   apptitle = 'reddit-clone';
   articles:Article[];
 
-  submitArticle(title:HTMLInputElement, link: HTMLInputElement):boolean{
-    console.log(`add title: ${title.value} and link: ${link.value}`);
-    this.articles.push(new Article(title.value, link.value, 0));
+  submitArticle(title:HTMLInputElement, link: HTMLInputElement, role: HTMLInputElement):boolean{
+    console.log(`add title: ${title.value}, and link: ${link.value}, and role: ${role.value}`);
+    this.articles.push(new Article(title.value, link.value, role.value, 0));
+    title.value = '';
+    link.value = '';
+    role.value = '';
     return false;
   }
 
   constructor(){
-    this.articles = [new Article('Angular', 'http://angular.io', 3), new Article('Fullstack', 'http://fullstack.io', 2), new Article('Angular Homepage', 'http://angular.io', )
+    this.articles = [new Article('Angular', 'http://angular.io', "user", 3), new Article('Fullstack', 'http://fullstack.io', "administrator", 2), new Article('Angular Homepage', 'http://angular.io', "user", 0)
   ];
   }
 

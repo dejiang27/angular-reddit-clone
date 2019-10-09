@@ -2,12 +2,13 @@ export class Article{
     title: string;
     link: string;
     votes: number;
+    role: string;//user or administrator
 
-    constructor(title: string, link: string, votes?: number){
+    constructor(title: string, link: string, role: string, votes?: number){
         this.votes = votes || 0;
         this.title = title;
         this.link = link;
-
+        this.role = role;
     }
 
     voteUp():void{
