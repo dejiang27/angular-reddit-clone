@@ -20,12 +20,23 @@ export class AppComponent {
   }
 
   constructor(){
-    this.articles = [new Article('Angular', 'http://angular.io', "user", 3), new Article('Fullstack', 'http://fullstack.io', "administrator", 2), new Article('Angular Homepage', 'http://angular.io', "user", 0)
+    this.articles = [new Article('Angular', 'http://angular.io', "user", 3), new Article('Fullstack', 'http://fullstack.io', "administrator", 2), new Article('Angular Homepage', 'http://angular.io', "user", 1)
   ];
   }
 
 
   sortedArticles(): Article[] {
     return this.articles.sort((a:Article, b: Article) => b.votes - a.votes);
+  }
+
+  getLowest():number{
+    var lowest:number;
+    var newarray : number[] = [];
+    var i: number;
+    for (i = 0; i < this.articles.length; i++){
+      newarray[i] = this.articles[i].votes;
+    }
+    lowest = Math.min(...newarray);
+    return lowest; 
   }
 }

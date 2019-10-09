@@ -16,7 +16,7 @@
       &nbsp;
 
       <a *ngIf="article.role == 'administrator'" >
-        <a class="btn btn-warning">flag</a>
+        <a class="btn btn-warning" (click)="flagArticle()">flag</a>
       </a>
 
     </div>
