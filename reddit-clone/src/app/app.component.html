@@ -8,15 +8,16 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
 
-
-  <div class="input-group mb-3">
+<h2>{{apptitle}}</h2>
+<form>
+  <div class="input-group mb-3" style="width:60%">
       <div class="input-group-prepend">
         <span class="input-group-text" id="inputGroup-sizing-default">Title</span>
       </div>
       <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="title" #newtitle>
     </div>
 
-  <div class="input-group mb-3">
+  <div class="input-group mb-3" style="width:70%">
       <div class="input-group-prepend">
         <span class="input-group-text" id="basic-addon3">https://example.com/</span>
       </div>
@@ -26,6 +27,7 @@
   <!--Add the submit button-->
   <button type="button" (click)="submitArticle(newtitle, newlink)" class="btn btn-primary">Submit</button>
 
+  <!--Add the articles -->
 <div class="ui grid posts">
   <app-article *ngFor="let article of sortedArticles()" [article]="article"></app-article>
 </div>

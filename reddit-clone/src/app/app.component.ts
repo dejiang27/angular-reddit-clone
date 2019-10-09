@@ -7,7 +7,7 @@ import { Article } from './article/article.model';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  //title = 'reddit-clone';
+  apptitle = 'reddit-clone';
   articles:Article[];
 
   submitArticle(title:HTMLInputElement, link: HTMLInputElement):boolean{
