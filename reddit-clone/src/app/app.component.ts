@@ -15,7 +15,7 @@ export class AppComponent {
     this.articles.push(new Article(title.value, link.value, role.value, 0));
     title.value = '';
     link.value = '';
-    role.value = '';
+    role.value = "Select the role";
     return false;
   }
 

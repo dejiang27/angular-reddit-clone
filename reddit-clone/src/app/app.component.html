@@ -30,16 +30,26 @@
     </div>
 
   <!--Add the role field-->
+    <!-- This is the first way to add the user role for this application.
     <div class="input-group mb-3" style="width:400px">
       <div class="input-group-prepend">
         <span class="input-group-text" id="inputGroup-sizing-default">Role</span>
       </div>
       <input type="text" class="form-control" placeholder="user or administrator" aria-describedby="basic-addon3" id="role" #newrole>
     </div>
+  -->
+    <!-- This is the second way to add the user role for this application.
+      I'm thinking to add the select menu for the role. It will be easier for user to select the role. -->
 
+    <select class="custom-select" style="width:400px" name="role" id="role" #newrole>
+        <option selected>Select the role</option>
+        <option value="user">User</option>
+        <option value="administrator">Administrator</option>
+    </select>
+    <br>
   <!--Add the submit button-->
   <button type="button" (click)="submitArticle(newtitle, newlink, newrole)" class="btn btn-primary">Submit</button>
-
+</form>
   <!--Add the articles -->
 <div class="ui grid posts">
   <app-article *ngFor="let article of sortedArticles()" [article]="article"></app-article>
